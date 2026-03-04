@@ -1,0 +1,137 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: auto; /* para permitir scroll horizontal si el layout lo requiere */
+  overflow-y: hidden;
+  background: #000;
+  color: #fff;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+/* Canvas detrás de todo */
+#constellation {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 20% 0%, #02101f 0, #000 55%, #000 100%);
+}
+
+/* Sección principal tipo portada */
+.hero {
+  min-height: 100vh;
+  width: 200vw; /* ancho mayor para sugerir scroll horizontal */
+  display: flex;
+  align-items: center;
+  padding-left: 5vw;
+}
+
+.hero-inner {
+  max-width: 50rem;
+  padding: 3rem 4rem;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* Título grande */
+.hero-text h1 {
+  font-size: clamp(3.8rem, 5vw, 5rem);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+/* Subtítulo más pequeño */
+.hero-text h2 {
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+/* Párrafo con font-size más pequeño que el título */
+.hero-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 40rem;
+}
+
+/* Flecha de scroll horizontal en la esquina inferior derecha */
+.scroll-hint {
+  position: fixed;
+  right: 2.5rem;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+  color: #b9dfff;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  user-select: none;
+  pointer-events: none;
+}
+
+.arrow-right {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(0, 180, 255, 0.2), #00b4ff);
+  position: relative;
+  box-shadow: 0 0 8px rgba(0, 180, 255, 0.9);
+  animation: arrow-move 1.4s infinite;
+}
+
+.arrow-right::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10px solid #00b4ff;
+  filter: drop-shadow(0 0 4px #00b4ff);
+}
+
+@keyframes arrow-move {
+  0% {
+    transform: translateX(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateX(10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 0.4;
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .hero {
+    width: 100vw;
+    padding: 4rem 1.5rem;
+  }
+
+  .hero-inner {
+    padding: 2.5rem 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+}

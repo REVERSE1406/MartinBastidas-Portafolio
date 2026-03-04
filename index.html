@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Martin Bastidas - Portafolio</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <div class="page show">
+      <aside class="sidebar" aria-label="Barra lateral">
+        <nav class="sidebar-top" aria-label="Navegación principal">
+          <a href="about.html">ABOUT</a>
+          <a href="portafolio.html">PORTAFOLIO</a>
+          <a href="contacto.html">CONTACTO</a>
+        </nav>
+
+        <div class="sidebar-middle">
+          <a href="index.html" class="logo" style="text-decoration: none; color: inherit">MB</a>
+        </div>
+
+        <nav class="sidebar-bottom" aria-label="Redes sociales">
+          <a href="mailto:martinbastidas@gmail.com" class="social-link social-mail" aria-label="Correo">✉</a>
+          <a
+            href="https://instagram.com/martinbastidasc"
+            target="_blank"
+            rel="noopener"
+            class="social-link social-ig"
+            aria-label="Instagram"
+          >
+            IG
+          </a>
+          <a
+            href="https://www.linkedin.com/in/tu_usuario"
+            target="_blank"
+            rel="noopener"
+            class="social-link social-in"
+            aria-label="LinkedIn"
+          >
+            in
+          </a>
+          <a
+            href="https://www.facebook.com/martinbastidas"
+            target="_blank"
+            rel="noopener"
+            class="social-link social-fb"
+            aria-label="Facebook"
+          >
+            fb
+          </a>
+        </nav>
+      </aside>
+
+      <main class="scroll-container">
+        <div class="scroll-track">
+          <!-- SECCIÓN 1: INTRO + CONSTELACIÓN -->
+          <section class="panel panel-intro dark-mode" id="home-panel">
+            <canvas id="constellation-canvas"></canvas>
+
+            <div class="intro-content-wrapper">
+              <header class="intro-header">
+                <h1>MARTIN BASTIDAS</h1>
+                <p class="subtitle">PORTAFOLIO DIGITAL</p>
+              </header>
+
+              <div class="intro-content">
+                <p>
+                  "Bienvenido a mi espacio creativo. Soy Martín, un diseñador enfocado en el desarrollo web y la
+                  creación de mundos interactivos. Desde el diseño de interfaces en Photoshop e Illustrator hasta el
+                  desarrollo de niveles en Unity, mi objetivo es 'streamear' soluciones innovadoras a problemas
+                  complejos. Considero que el diseño es una herramienta poderosa para contar historias y generar impacto
+                  social."
+                </p>
+              </div>
+            </div>
+
+            <div class="scroll-indicator">
+              <svg viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M0,15 L80,15 M70,5 L85,15 L70,25"
+                  stroke="white"
+                  stroke-width="2"
+                  fill="none"
+                  filter="drop-shadow(0 0 5px rgba(255,255,255,0.8))"
+                />
+                <polygon
+                  points="85,15 100,15 90,5 90,25"
+                  fill="white"
+                  filter="drop-shadow(0 0 8px rgba(255,255,255,1))"
+                />
+              </svg>
+            </div>
+          </section>
+
+          <!-- SECCIÓN 2: PROYECTOS (DOS COLUMNAS EN LOOP) -->
+          <section class="panel panel-projects" id="projects-panel">
+            <div class="projects-layout">
+              <!-- Columna izquierda: título + texto -->
+              <div class="projects-info">
+                <h2>PROYECTOS PRINCIPALES</h2>
+
+                <p class="projects-subtitle">
+                  Una colección de piezas donde mezclo diseño digital, narrativa visual y experiencias interactivas.
+                </p>
+
+                <!-- Bloque que se escribe con animación -->
+                <div
+                  class="projects-typing"
+                  id="projects-typing"
+                  data-text="Desde UI para la web hasta escenas en Unity, me interesa crear interfaces claras, motion con personalidad y espacios que se sientan vivos. Aquí puedes ver cómo combino música, cine y videojuegos para construir cada proyecto."
+                >
+                  <span class="projects-typing-text"></span>
+                  <span class="projects-typing-cursor">|</span>
+                </div>
+
+                <div class="projects-tags">
+                  <span>Diseño UI/Web</span>
+                  <span>Motion &amp; Títulos</span>
+                  <span>Unity / Level Design</span>
+                  <span>Branding Visual</span>
+                </div>
+
+                <p class="projects-cta">Haz clic en cualquier tarjeta para ver el detalle del proyecto.</p>
+
+                <div class="projects-stats">
+                  <div class="projects-stat">
+                    <span class="projects-stat-value">6+</span>
+                    <span class="projects-stat-label">Proyectos</span>
+                  </div>
+                  <div class="projects-stat">
+                    <span class="projects-stat-value">4</span>
+                    <span class="projects-stat-label">Áreas</span>
+                  </div>
+                  <div class="projects-stat">
+                    <span class="projects-stat-value">∞</span>
+                    <span class="projects-stat-label">Ideas</span>
+                  </div>
+                </div>
+
+                <a href="portafolio.html" class="projects-open-overlay">Ver galería completa →</a>
+              </div>
+
+              <!-- Columna derecha: dos columnas de proyectos en loop -->
+              <div class="projects-columns">
+                <!-- Columna que se mueve hacia arriba -->
+                <div class="projects-column projects-column-up">
+                  <div class="projects-column-inner">
+                    <article class="project-tile" data-project-id="mano-negra">
+                      <div class="project-tile-image-wrap">
+                        <img src="imagenes/manonegra.jpg" alt="Proyecto 1" />
+                        <span class="project-tile-hint">Ver proyecto</span>
+                      </div>
+                      <div class="project-tile-content"><h3>LA MANO NEGRA</h3></div>
+                    </article>
+
+                    <article class="project-tile" data-project-id="mar-y-vivo">
+                      <div class="project-tile-image-wrap">
+                        <img src="_imagenes/rocket.jpg" alt="Proyecto 2" />
+                        <span class="project-tile-hint">Ver proyecto</span>
+                      </div>
+                      <div class="project-tile-content"><h3>I'm a Rocket</h3></div>
+                    </article>
+
+                    <article class="project-tile" data-project-id="retrato-digital">
+                      <div class="project-tile-image-wrap">
+                        <img src="_imagenes/zombie.jpg" alt="Proyecto 3" />
+                        <span class="project-tile-hint">Ver proyecto</span>
+                      </div>
+                      <div class="project-tile-content"><h3>RETRATO DIGITAL</h3></div>
+                    </article>
+
+                    <!-- Duplicados para el loop -->
+                    <article class="project-tile" data-project-id="mano-negra">
+                      <div class="project-tile-image-wrap">
+                        <img src="_imagenes/manonegra.jpg" alt="Proyecto 1" />
+                        <span class="project-tile-hint">Ver proyecto</span>
+                      </div>
+                      <div class="project-tile-content"><h3>LA MANO NEGRA</h3></div>
+                    </article>
+
+                    <article class="project-tile" data-project-id="mar-y-vivo">
+                      <div class="project-tile-image-wrap">
+                        <img src="_imagenes/rocket.jpg" alt="Proyecto 2" />
+                        <span class="project-tile-hint">Ver proyecto</span>
+                      </div>
+                      <div class="project-tile-content"><h3>I'm a Rocket</h3></div>
+                    </article>
+                  </div>
+                </div>
+
+                <!-- Columna que se mueve hacia abajo -->
+                <div class="projects-column projects-column-down">
+                  <div class="projects-column-inner">
+                    <article class="project-tile" data-project-id="proyecto-ilustrado">
+                      <div class="project-tile-image-wrap">
+                        <img src="_imagenes/diablo.jpg" alt="Proyecto 4" />
+                        <span class="project-tile-hint">Ver proyecto</span>
+                      </div>
+                      <div class="project-tile-content"><h3>THE DEVIL FACE</h3></div>
+                    </article>
+
+                    <article class="project-tile" data-project-id="diseno-editorial">
+                      <div class="project-tile-image-wrap">
+                        <img src="_imagenes/MYM.jpg" alt="Proyecto 5" />
+                        <span class="project-tile-hint">Ver proyecto</span>
+                      </div>
+                      <div class="project-tile-content"><h3>M & M</h3></div>
+                    </article>
+
+                    <article class="project-tile" data-project-id="poster-digital">
+                      <div class="project-tile-image-wrap">
+                        <img src="_imagenes/martinarena.jpg" alt="Proyecto 6" />
+                        <span class="project-tile-hint">Ver proyecto</span>
+                      </div>
+                      <div class="project-tile-content"><h3>TIDE & TRACE</h3></div>
+                    </article>
+
+                    <!-- Duplicados para el loop -->
+                    <article class="project-tile" data-project-id="proyecto-ilustrado">
+                      <div class="project-tile-image-wrap">
+                        <img src="_imagenes/diablo.jpg" alt="Proyecto 4" />
+                        <span class="project-tile-hint">Ver proyecto</span>
+                      </div>
+                      <div class="project-tile-content"><h3>THE DEVIL FACE</h3></div>
+                    </article>
+
+                    <article class="project-tile" data-project-id="diseno-editorial">
+                      <div class="project-tile-image-wrap">
+                        <img src="_imagenes/MYM.jpg" alt="Proyecto 5" />
+                        <span class="project-tile-hint">Ver proyecto</span>
+                      </div>
+                      <div class="project-tile-content"><h3>M & M</h3></div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SECCIÓN 3: STACK / SOFTWARE (inspirado en Magic 5) -->
+          <section class="panel about-panel" id="about-panel">
+            <div class="about-panel-bg" aria-hidden="true">
+              <div class="about-bg-gradient"></div>
+              <div class="about-bg-orb about-bg-orb-1"></div>
+              <div class="about-bg-orb about-bg-orb-2"></div>
+              <div class="about-bg-orb about-bg-orb-3"></div>
+              <div class="about-bg-orb about-bg-orb-4"></div>
+            </div>
+            <div class="about-stack-wrap" id="about-stack-wrap">
+              <h2 class="about-stack-headline">Software que domino</h2>
+              <p class="about-stack-sub">Herramientas con las que creo experiencias visuales e interactivas.</p>
+              <div class="about-stack-grid">
+                <div class="about-stack-card about-stack-card--after-effects" style="--delay: 0">
+                  <div class="about-stack-logo">
+                    <img src="_imagenes/aftereffects.jpg" alt="After Effects" />
+                  </div>
+                  <span class="about-stack-name">After Effects</span>
+                </div>
+                <div class="about-stack-card about-stack-card--illustrator" style="--delay: 0.1">
+                  <div class="about-stack-logo">
+                    <img src="_imagenes/illustratorlogo.jpg" alt="Illustrator" />
+                  </div>
+                  <span class="about-stack-name">Illustrator</span>
+                </div>
+                <div class="about-stack-card about-stack-card--unity" style="--delay: 0.2">
+                  <div class="about-stack-logo about-stack-logo-unity">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/1/19/Unity_Technologies_logo.svg"
+                      alt="Unity"
+                    />
+                  </div>
+                  <span class="about-stack-name">Unity</span>
+                </div>
+                <div class="about-stack-card about-stack-card--photoshop" style="--delay: 0.3">
+                  <div class="about-stack-logo">
+                    <img src="_imagenes/photoshoplogo.jpg" alt="Photoshop" />
+                  </div>
+                  <span class="about-stack-name">Photoshop</span>
+                </div>
+              </div>
+              <a href="portafolio.html" class="about-stack-cta">Ver proyectos →</a>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- CAPA FONDO CON NAVES -->
+    <div class="ships-layer">
+      <div class="ship"></div>
+      <div class="ship"></div>
+      <div class="ship"></div>
+      <div class="ship"></div>
+      <div class="ship"></div>
+    </div>
+
+    <div class="cursor-circle"></div>
+
+    <!-- SCRIPTS PRINCIPALES -->
+    <script src="scripts.js"></script>
+    <script src="script.js"></script>
+
+    <!-- OVERLAY PÁGINA COMPLETA DE PROYECTOS -->
+    <div id="projects-overlay" class="projects-overlay">
+      <nav class="projects-hamburger">
+        <a href="index.html" class="hamburger-item">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-label">HOME</span>
+        </a>
+
+        <a href="about.html" class="hamburger-item">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-label">ABOUT+</span>
+        </a>
+
+        <a href="portafolio.html" class="hamburger-item">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-label">PROYECTOS</span>
+        </a>
+
+        <a href="contacto.html" class="hamburger-item">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-label">CONTACTO</span>
+        </a>
+      </nav>
+
+      <button class="projects-overlay-close" type="button">← BACK</button>
+
+      <div class="projects-overlay-inner">
+        <header class="projects-overlay-header">
+          <h2>PROYECTOS</h2>
+          <p>Selección completa de proyectos en recorrido continuo.</p>
+        </header>
+
+        <!-- Carrusel en forma de onda -->
+        <div class="wave-carousel">
+          <div class="wave-track">
+            <article class="wave-card" data-project-id="mano-negra" style="--wave-offset: 30px">
+              <div class="wave-card-inner">
+                <img src="_imagenes/manonegra.jpg" alt="Proyecto 1" />
+                <span class="wave-card-hint">Ver proyecto</span>
+                <h3>LA MANO NEGRA</h3>
+              </div>
+            </article>
+
+            <article class="wave-card" data-project-id="mar-y-vivo" style="--wave-offset: 10px">
+              <div class="wave-card-inner">
+                <img src="_imagenes/rocket.jpg" alt="Proyecto 2" />
+                <span class="wave-card-hint">Ver proyecto</span>
+                <h3>I'm a Rocket</h3>
+              </div>
+            </article>
+
+            <article class="wave-card" data-project-id="retrato-digital" style="--wave-offset: -10px">
+              <div class="wave-card-inner">
+                <img src="_imagenes/zombie.jpg" alt="Proyecto 3" />
+                <span class="wave-card-hint">Ver proyecto</span>
+                <h3>RETRATO DIGITAL</h3>
+              </div>
+            </article>
+
+            <article class="wave-card" data-project-id="poster-digital" style="--wave-offset: -30px">
+              <div class="wave-card-inner">
+                <img src="_imagenes/diablo.jpg" alt="Proyecto 4" />
+                <span class="wave-card-hint">Ver proyecto</span>
+                <h3>THE DEVIL FACE</h3>
+              </div>
+            </article>
+
+            <!-- duplicados para que el loop sea suave -->
+            <article class="wave-card" data-project-id="mano-negra" style="--wave-offset: 30px">
+              <div class="wave-card-inner">
+                <img src="_imagenes/manonegra.jpg" alt="Proyecto 1" />
+                <span class="wave-card-hint">Ver proyecto</span>
+                <h3>LA MANO NEGRA</h3>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MINI VENTANA PARA PROYECTOS (más info: proceso + herramientas) -->
+    <div id="project-modal" class="project-modal-backdrop">
+      <div class="project-modal">
+        <div class="project-modal-header">
+          <button class="project-modal-close" type="button" aria-label="Cerrar">×</button>
+        </div>
+
+        <div class="project-modal-image-wrapper">
+          <img id="project-modal-image" src="" alt="" />
+        </div>
+
+        <div class="project-modal-body">
+          <div class="project-modal-text">
+            <h3 id="project-modal-title"></h3>
+            <p id="project-modal-description"></p>
+          </div>
+
+          <div class="project-modal-process" id="project-modal-process-wrap">
+            <h4 class="project-modal-label">Cómo se creó</h4>
+            <p id="project-modal-process"></p>
+          </div>
+
+          <div class="project-modal-tools" id="project-modal-tools-wrap">
+            <h4 class="project-modal-label">Herramientas usadas</h4>
+            <div class="project-modal-tools-list" id="project-modal-tools-list"></div>
+          </div>
+        </div>
+
+        <div class="project-modal-actions">
+          <button class="project-modal-exit" type="button">SALIR</button>
+          <button class="project-modal-next" type="button" aria-label="Siguiente proyecto">→</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vista de imagen a tamaño completo dentro del modal de proyecto -->
+    <div id="project-image-full" class="project-image-full">
+      <div class="project-image-full-inner">
+        <button id="project-image-full-close" type="button" class="project-image-full-close" aria-label="Cerrar imagen">
+          ×
+        </button>
+        <img id="project-image-full-img" src="" alt="" />
+      </div>
+    </div>
+
+    <!-- Mini tarjeta de música flotante (si hay música global sonando) -->
+    <div class="floating-music-badge" id="floating-music-badge" aria-live="polite">
+      <button class="floating-music-toggle" type="button" aria-label="Reproducir / Pausar música global">▶</button>
+      <div class="floating-music-info">
+        <span class="floating-music-label">Reproduciendo</span>
+        <span class="floating-music-title" id="floating-music-title">---</span>
+      </div>
+    </div>
+  </body>
+</html>

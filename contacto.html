@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contacto - Martin Bastidas</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body class="contact-page">
+    <div class="page show">
+      <aside class="sidebar" aria-label="Barra lateral">
+        <nav class="sidebar-top" aria-label="Navegación principal">
+          <a href="about.html">ABOUT</a>
+          <a href="portafolio.html">PORTAFOLIO</a>
+          <a href="contacto.html">CONTACTO</a>
+        </nav>
+
+        <div class="sidebar-middle">
+          <a href="index.html" class="logo" style="text-decoration: none; color: inherit">MB</a>
+        </div>
+
+        <nav class="sidebar-bottom" aria-label="Redes sociales">
+          <a href="mailto:martinbastidas@gmail.com" class="social-link social-mail" aria-label="Correo">✉</a>
+          <a
+            href="https://instagram.com/martinbastidas"
+            target="_blank"
+            rel="noopener"
+            class="social-link social-ig"
+            aria-label="Instagram"
+          >
+            IG
+          </a>
+          <a
+            href="https://www.linkedin.com/in/tu_usuario"
+            target="_blank"
+            rel="noopener"
+            class="social-link social-in"
+            aria-label="LinkedIn"
+          >
+            in
+          </a>
+          <a
+            href="https://www.facebook.com/martinbastidas"
+            target="_blank"
+            rel="noopener"
+            class="social-link social-fb"
+            aria-label="Facebook"
+          >
+            fb
+          </a>
+        </nav>
+      </aside>
+
+      <main class="scroll-container">
+        <section class="panel contact-panel">
+          <div class="contact-layout">
+            <div class="contact-left">
+              <h1>Contáctame</h1>
+              <p class="contact-tagline">¿Tienes un proyecto en mente? Me encantaría escucharte.</p>
+              <p class="contact-intro">
+                Ya sea que busques diseño web, motion graphics, ilustración o desarrollo de niveles en Unity, estoy aquí
+                para ayudarte a dar vida a tus ideas.
+              </p>
+
+              <address class="contact-methods">
+                <a href="mailto:martinbastidas@gmail.com" class="contact-method">
+                  <span class="contact-method-icon">✉</span>
+                  <span>martinbastidas@gmail.com</span>
+                </a>
+                <p class="contact-response">Respondo en menos de 24 horas.</p>
+              </address>
+            </div>
+
+            <div class="contact-right">
+              <form class="contact-form-modern" id="contact-form">
+                <div class="contact-field">
+                  <label for="nombre">Nombre</label>
+                  <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+                </div>
+                <div class="contact-field">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+                </div>
+                <div class="contact-field">
+                  <label for="mensaje">Mensaje</label>
+                  <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    rows="5"
+                    placeholder="Cuéntame sobre tu proyecto..."
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" class="contact-submit">Enviar mensaje</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Mini tarjeta de música flotante (si hay música global sonando) -->
+    <div class="floating-music-badge" id="floating-music-badge" aria-live="polite">
+      <button class="floating-music-toggle" type="button" aria-label="Reproducir / Pausar música global">▶</button>
+      <div class="floating-music-info">
+        <span class="floating-music-label">Reproduciendo</span>
+        <span class="floating-music-title" id="floating-music-title">---</span>
+      </div>
+    </div>
+
+    <div class="cursor-circle"></div>
+    <script src="scripts.js"></script>
+    <script>
+      document.getElementById('contact-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const nombre = document.getElementById('nombre').value;
+        const email = document.getElementById('email').value;
+        const mensaje = document.getElementById('mensaje').value;
+        const body = 'Hola Martín,\n\nMe llamo ' + nombre + ' y te escribo desde ' + email + '.\n\n' + mensaje;
+        window.location.href =
+          'mailto:martinbastidas@gmail.com?subject=Contacto desde portafolio&body=' + encodeURIComponent(body);
+      });
+    </script>
+  </body>
+</html>

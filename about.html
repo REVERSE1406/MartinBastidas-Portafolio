@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Martin Bastidas - About</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body class="about-page">
+    <div class="page show">
+      <aside class="sidebar" aria-label="Barra lateral">
+        <nav class="sidebar-top" aria-label="Navegación principal">
+          <a href="about.html">ABOUT</a>
+          <a href="portafolio.html">PORTAFOLIO</a>
+          <a href="contacto.html">CONTACTO</a>
+        </nav>
+
+        <div class="sidebar-middle">
+          <a href="index.html" class="logo" style="text-decoration: none; color: inherit">MB</a>
+        </div>
+
+        <nav class="sidebar-bottom" aria-label="Redes sociales">
+          <a href="mailto:martinbastidas@gmail.com" class="social-link social-mail" aria-label="Correo">✉</a>
+          <a
+            href="https://instagram.com/tu_usuario"
+            target="_blank"
+            rel="noopener"
+            class="social-link social-ig"
+            aria-label="Instagram"
+            >IG</a
+          >
+          <a
+            href="https://www.linkedin.com/in/tu_usuario"
+            target="_blank"
+            rel="noopener"
+            class="social-link social-in"
+            aria-label="LinkedIn"
+            >in</a
+          >
+          <a
+            href="https://www.facebook.com/tu_usuario"
+            target="_blank"
+            rel="noopener"
+            class="social-link social-fb"
+            aria-label="Facebook"
+            >fb</a
+          >
+        </nav>
+      </aside>
+
+      <main class="scroll-container">
+        <section class="panel about-page-panel">
+          <!-- ========== GUÍA RÁPIDA: DÓNDE PONER TU CONTENIDO ==========
+            • Tu foto: sustituye la ruta en el <img> de .about-portrait-frame por:  img/mi-foto.jpg
+            • Portadas de álbumes: img/album-synthwave.jpg, img/album-indie.jpg, img/album-ost.jpg
+            • Archivos MP3: audio/synthwave-mix.mp3, audio/indie-mix.mp3, audio/ost-mix.mp3
+              (cada .music-player tiene data-audio-src="audio/..." para la pista que suena al hacer click)
+          ========== -->
+
+          <!-- HERO: Sobre mí (scroll hacia abajo para más) -->
+          <header class="about-hero about-block about-block--rgb">
+            <div class="about-hero-left">
+              <h1>SOBRE MÍ</h1>
+              <p class="about-hero-tagline">Diseñador digital & creador de experiencias interactivas.</p>
+
+              <div
+                class="about-hero-text"
+                id="about-hero-text"
+                data-typing-text="Me llamo Martín Bastidas y me apasiona construir experiencias que mezclan storytelling, diseño visual y tecnología. Trabajo entre interfaces web, motion graphics y el diseño de niveles en motores como Unity."
+              >
+                <p id="about-typing-paragraph">
+                  <span id="about-typing-output"></span><span class="about-typing-line" aria-hidden="true"></span>
+                </p>
+                <p class="about-hero-p2">
+                  Creo que las mejores ideas surgen cuando conectas referencias de cine, música y videojuegos con un ojo
+                  puesto en la usabilidad y la atmósfera. Me gusta iterar rápido, prototipar en baja y subir la apuesta
+                  visual sin perder claridad.
+                </p>
+                <p class="about-hero-p3">
+                  En mi tiempo libre exploro concept art, fotobashing y bandas sonoras; todo eso termina filtrándose en
+                  los proyectos que diseño. Busco siempre que cada pieza tenga personalidad y que el usuario sienta que
+                  entra en un mundo coherente.
+                </p>
+              </div>
+
+              <div class="about-hero-highlights">
+                <span class="about-pill about-pill--rgb">Diseño UI & Web</span>
+                <span class="about-pill about-pill--rgb">Motion / After Effects</span>
+                <span class="about-pill about-pill--rgb">Unity / Level Design</span>
+                <span class="about-pill about-pill--rgb">Concept Art</span>
+              </div>
+            </div>
+
+            <figure class="about-hero-right">
+              <div class="about-portrait-frame about-portrait-frame--rgb">
+                <!-- PON AQUÍ TU FOTO: guarda tu imagen como img/mi-foto.jpg y usa src="img/mi-foto.jpg" -->
+                <img src="img/mi-foto.jpg" alt="Martin Bastidas" />
+              </div>
+
+              <a href="portafolio.html" class="about-cta-button">Ver proyectos destacados →</a>
+            </figure>
+          </header>
+
+          <!-- CARRERA QUE ESTUDIO (texto izquierda, dragón derecha) -->
+          <section class="about-section about-block about-block--rgb">
+            <h2 class="about-section-title">Carrera que estudio</h2>
+            <div class="about-career-inner">
+              <div class="about-career-box">
+                <p class="about-career-text">
+                  Estudio <strong>Diseño de Medios Interactivos</strong> en la USFQ. Me interesa especializarme en
+                  experiencias interactivas, diseño de interfaces y narrativa visual para videojuegos, medios digitales
+                  y páginas web. La carrera me ha dado bases en programación, diseño gráfico y UX, que combino con lo
+                  que aprendo por mi cuenta en motion y game design.
+                </p>
+              </div>
+              <figure class="about-career-image">
+                <!-- Pon aquí tu imagen: guarda como _imagenes/carrera-imagen.jpg -->
+                <img src="_imagenes/carrera-imagen.jpg" alt="Carrera" />
+              </figure>
+            </div>
+          </section>
+
+          <!-- MÚSICA QUE ME ACOMPAÑA: álbumes + reproductor (click para reproducir) -->
+          <section class="about-section about-music-section about-block about-block--rgb">
+            <h2 class="about-section-title">Música que me acompaña</h2>
+            <p class="about-section-intro">
+              Siempre diseño con música de fondo. Estos álbumes son parte de mi banda sonora cuando trabajo en
+              interfaces, motion o niveles en Unity.
+            </p>
+
+            <div class="music-grid">
+              <article class="album-card album-card--rgb" style="--accent-color: #ff6b81">
+                <div class="album-art">
+                  <img src="img/ferxxocalipsiscover.jpg" alt="Synthwave Nights" />
+                </div>
+                <div class="album-info">
+                  <h3>FERXXOCALIPSIS</h3>
+                  <p class="album-artist">ALBUM DE FERXXO</p>
+                  <ul class="album-tracks">
+                    <li>01. ALAKRAN</li>
+                    <li>02. LUNA</li>
+                    <li>03. 5O PALOS</li>
+                  </ul>
+                  <div
+                    class="music-player"
+                    data-audio-src="audio/Feid - Alakran (Official Video).mp3"
+                    data-track-title="FERXXOCALIPSIS - ALAKRAN"
+                  >
+                    <button class="music-play-toggle" type="button" aria-label="Reproducir / Pausar">▶</button>
+                    <div class="music-progress"><div class="music-progress-bar"></div></div>
+                    <span class="music-time music-time-current">0:00</span>
+                    <span class="music-time music-time-total">0:00</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="album-card album-card--rgb" style="--accent-color: #ffc857">
+                <div class="album-art">
+                  <img src="img/moralomismo.jpg" alt="Indie Moods" />
+                </div>
+                <div class="album-info">
+                  <h3>LO MISMO DE SIEMPRE</h3>
+                  <p class="album-artist">ALBUM DE MORA</p>
+                  <ul class="album-tracks">
+                    <li>01. AURORA</li>
+                    <li>02. BANDIDA</li>
+                    <li>03. OTRA NOCHE SIN DORMIR</li>
+                  </ul>
+                  <div
+                    class="music-player"
+                    data-audio-src="audio/Mora, De La Rose - AURORA (Visualizer)  LO MISMO DE SIEMPRE.mp3"
+                    data-track-title="MORA - AURORA"
+                  >
+                    <button class="music-play-toggle" type="button" aria-label="Reproducir / Pausar">▶</button>
+                    <div class="music-progress"><div class="music-progress-bar"></div></div>
+                    <span class="music-time music-time-current">0:00</span>
+                    <span class="music-time music-time-total">0:00</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="album-card album-card--rgb" style="--accent-color: #6bc2ff">
+                <div class="album-art">
+                  <img src="img/omarcourtz.jpg" alt="Cinematic Scores" />
+                </div>
+                <div class="album-info">
+                  <h3>POR SI MAÑANA NO ESTOY</h3>
+                  <p class="album-artist">ALBUM DE OMAR COURTZ</p>
+                  <ul class="album-tracks">
+                    <li>01. SI ESTAS CON ALGUIEN</li>
+                    <li>02. WHAT U NEED</li>
+                    <li>03. SUELTA GATITA SUELTA</li>
+                  </ul>
+                  <div
+                    class="music-player"
+                    data-audio-src="audio/OMAR COURTZ (((ousi))) - SI ESTÁS CON ALGUIEN (Visualizer).mp3"
+                    data-track-title="OMAR COURTZ - SI ESTÁS CON ALGUIEN"
+                  >
+                    <button class="music-play-toggle" type="button" aria-label="Reproducir / Pausar">▶</button>
+                    <div class="music-progress"><div class="music-progress-bar"></div></div>
+                    <span class="music-time music-time-current">0:00</span>
+                    <span class="music-time music-time-total">0:00</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- JUEGOS QUE ME INSPIRAN -->
+          <section class="about-section about-block about-block--rgb">
+            <h2 class="about-section-title">Juegos que me inspiran</h2>
+            <p class="about-section-intro">
+              Los videojuegos son un manual vivo de diseño: interfaces, feedback visual, ritmo, narrativa y UX.
+            </p>
+
+            <div class="about-grid about-games-grid">
+              <article class="about-card about-card--rgb about-card--glow-1">
+                <h3>Juegos de mundo abierto</h3>
+                <p>
+                  Me inspiran para diseñar espacios navegables, mapas entendibles y sistemas de información que no
+                  saturen al jugador.
+                </p>
+                <p class="about-card-tags">Zelda BOTW · Red Dead Redemption 2</p>
+              </article>
+
+              <article class="about-card about-card--rgb about-card--glow-2">
+                <h3>Indie de autor</h3>
+                <p>
+                  Proyectos pequeños pero muy cuidados en arte y narrativa. Me recuerdan que una buena idea visual vale
+                  más que un presupuesto gigante.
+                </p>
+                <p class="about-card-tags">Inside · Hollow Knight · Gris</p>
+              </article>
+
+              <article class="about-card about-card--rgb about-card--glow-3">
+                <h3>Experiencias multijugador</h3>
+                <p>
+                  Me sirven para observar cómo conviven UX, rendimiento y claridad visual en interfaces que se usan bajo
+                  presión.
+                </p>
+                <p class="about-card-tags">Valorant · Apex Legends · Rocket League</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- LO QUE PUEDO HACER -->
+          <section class="about-section about-block">
+            <h2 class="about-section-title">Lo que puedo hacer por tu proyecto</h2>
+            <p class="about-section-intro">
+              Combino diseño y desarrollo para convertir ideas en experiencias visuales claras y memorables.
+            </p>
+
+            <div class="skills-layout">
+              <div class="skills-column skills-column--rgb">
+                <h3>Diseño & Motion</h3>
+                <ul class="skills-list">
+                  <li><span>Interfaces web y mobile</span><em>Figma / Photoshop / Illustrator</em></li>
+                  <li><span>Motion graphics y titulación</span><em>After Effects</em></li>
+                  <li><span>Concept art y fotobashing</span><em>Workflow híbrido</em></li>
+                </ul>
+              </div>
+              <div class="skills-column skills-column--rgb">
+                <h3>Interactivo</h3>
+                <ul class="skills-list">
+                  <li><span>Prototipado UX</span><em>Flujos y microinteracciones</em></li>
+                  <li><span>Front-end visual</span><em>HTML, CSS, JS</em></li>
+                  <li><span>Diseño de niveles</span><em>Unity</em></li>
+                </ul>
+              </div>
+              <div class="skills-column skills-column--rgb">
+                <h3>Forma de trabajo</h3>
+                <ul class="skills-list">
+                  <li><span>Colaboración</span><em>Equipos creativos y técnicos</em></li>
+                  <li><span>Iteración rápida</span><em>Prototipos tempranos</em></li>
+                  <li><span>Entrega cuidada</span><em>Archivos ordenados, handoff claro</em></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="about-hire-banner about-hire-banner--rgb">
+              <p>
+                ¿Buscas a alguien que mezcle diseño, narrativa visual y prototipado interactivo?
+                <strong>Hablemos de tu próximo proyecto.</strong>
+              </p>
+              <a href="contacto.html" class="about-hire-button">Escríbeme</a>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <!-- Mini tarjeta de música flotante (se muestra cuando suena una canción) -->
+    <div class="floating-music-badge" id="floating-music-badge" aria-live="polite">
+      <button class="floating-music-toggle" type="button" aria-label="Reproducir / Pausar música">▶</button>
+      <div class="floating-music-info">
+        <span class="floating-music-label">Reproduciendo</span>
+        <span class="floating-music-title" id="floating-music-title">---</span>
+      </div>
+    </div>
+
+    <div class="cursor-circle"></div>
+    <script src="scripts.js"></script>
+  </body>
+</html>
