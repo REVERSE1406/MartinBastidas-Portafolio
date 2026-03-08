@@ -1,24 +1,18 @@
-/* ==========================================================================
-   PARTE 1: TU CÓDIGO ORIGINAL INTACTO (NO SE BORRÓ NADA)
-   ========================================================================== */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Fondo general tipo papel */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background-color: #426fbe;
   color: #111;
   min-height: 100vh;
-  overflow: hidden; /* controlamos el scroll manualmente */
-  cursor: none; /* usamos cursor circular propio */
+  overflow: hidden;
+  cursor: none;
 }
 
-/* Contenedor principal: sidebar + contenido */
 .page {
   display: flex;
   min-height: 100vh;
@@ -26,15 +20,13 @@ body {
   transform: translateY(10px);
   transition: opacity 0.6s ease, transform 0.6s ease;
   position: relative;
-  z-index: 1; /* por encima del fondo con naves */
+  z-index: 1;
 }
 
 .page.show {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* ---------------- CURSOR CIRCULAR ---------------- */
 
 .cursor-circle {
   position: fixed;
@@ -48,7 +40,6 @@ body {
   z-index: 9999;
   transition: width 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275),
     background-color 0.2s ease-out, border-color 0.2s ease-out, opacity 0.2s ease-out;
-  /* Sin mix-blend-mode para que se vea en constelación */
 }
 
 .cursor-circle.cursor-hover {
@@ -110,12 +101,10 @@ body.dragging .cursor-circle {
   letter-spacing: 0.2em;
 }
 
-/* ---------------- CONTENIDO HORIZONTAL ---------------- */
-
 .scroll-container {
   flex: 1;
   height: 100vh;
-  overflow-x: auto; /* scroll horizontal real */
+  overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
 }
@@ -125,7 +114,6 @@ body.dragging .cursor-circle {
   height: 100%;
 }
 
-/* Cada panel ocupa todo el ancho disponible a la derecha del nav */
 .panel {
   flex: 0 0 calc(100vw - 90px);
   height: 100%;
@@ -134,8 +122,6 @@ body.dragging .cursor-circle {
   flex-direction: column;
   justify-content: center;
 }
-
-/* -------- Panel 1: Intro -------- */
 
 .panel-intro {
   border-right: 0px solid #000000;
@@ -166,8 +152,6 @@ body.dragging .cursor-circle {
   line-height: 1.7;
 }
 
-/* ---- Panel 2: PROYECTOS (fondo negro → azul, 2 columnas) ---- */
-
 .panel-projects {
   border-right: 0px solid #222;
   background: linear-gradient(90deg, #000000 0%, #001f5f 50%, #1800ff 100%);
@@ -178,7 +162,7 @@ body.dragging .cursor-circle {
 
 .projects-layout {
   display: grid;
-  grid-template-columns: 1.4fr 1.6fr; /* izquierda texto / derecha proyectos */
+  grid-template-columns: 1.4fr 1.6fr;
   gap: 40px;
   width: 100%;
   height: 100%;
@@ -198,7 +182,6 @@ body.dragging .cursor-circle {
   max-width: 420px;
   margin-bottom: 16px;
 }
-/* Texto destacado en PROYECTOS */
 
 .projects-info h2 {
   font-family: 'Georgia', 'Times New Roman', serif;
@@ -216,11 +199,9 @@ body.dragging .cursor-circle {
   margin-bottom: 18px;
 }
 
-/* Contenedor del texto que se escribe */
-
 .projects-typing {
   max-width: 520px;
-  min-height: 76px; /* reserva espacio para que no salte el layout */
+  min-height: 76px;
   font-size: 14px;
   line-height: 1.9;
   color: #ffffff;
@@ -238,8 +219,6 @@ body.dragging .cursor-circle {
 .projects-typing-text {
   white-space: normal;
 }
-
-/* cursor parpadeando */
 
 .projects-typing-cursor {
   display: inline-block;
@@ -259,8 +238,6 @@ body.dragging .cursor-circle {
     opacity: 0;
   }
 }
-
-/* Etiquetas tipo chips debajo del texto */
 
 .projects-tags {
   display: flex;
@@ -339,24 +316,21 @@ body.dragging .cursor-circle {
   transform: translateX(4px);
 }
 
-/* Responsive: que la columna de texto siga cómoda en pantallas pequeñas */
-
 @media (max-width: 900px) {
   .projects-layout {
     grid-template-columns: 1fr;
   }
 
   .projects-info {
-    order: -1; /* el texto arriba de las tarjetas */
+    order: -1;
   }
 }
 
-/* Columna de proyectos: dos columnas verticales que se mueven */
 .projects-columns {
   display: grid;
   grid-template-columns: repeat(2, minmax(220px, 1fr));
   gap: 28px;
-  overflow: hidden; /* recorta el loop */
+  overflow: hidden;
 }
 
 .projects-column {
@@ -379,7 +353,6 @@ body.dragging .cursor-circle {
   animation-name: scroll-down;
 }
 
-/* Tarjetas de proyecto */
 .project-tile {
   position: relative;
   background: linear-gradient(145deg, rgba(15, 15, 35, 0.95), rgba(5, 5, 20, 0.9));
@@ -468,7 +441,6 @@ body.dragging .cursor-circle {
   margin: 0;
 }
 
-/* Animaciones loop */
 @keyframes scroll-up {
   0% {
     transform: translateY(0);
@@ -486,8 +458,6 @@ body.dragging .cursor-circle {
     transform: translateY(0);
   }
 }
-
-/* -------- Panel 3: Contacto -------- */
 
 .panel-contact {
   align-items: flex-start;
@@ -546,8 +516,6 @@ body.dragging .cursor-circle {
   background-color: #333;
 }
 
-/* ---------------- RESPONSIVE ---------------- */
-
 @media (max-width: 900px) {
   .panel {
     padding: 40px 32px;
@@ -598,8 +566,6 @@ body.dragging .cursor-circle {
     padding: 32px 20px;
   }
 }
-
-/* --- Fondo espacial con naves --- */
 
 .ships-layer {
   position: fixed;
@@ -701,11 +667,6 @@ body.dragging .cursor-circle {
   }
 }
 
-/* ==========================================================================
-     PARTE 2: AÑADIDOS NUEVOS (INDEX OSCURO, PORTAFOLIO BAD BUNNY Y ABOUT ME)
-     ========================================================================== */
-
-/* Limpieza del scroll en los contenedores nuevos */
 .scroll-container::-webkit-scrollbar {
   display: none;
 }
@@ -714,7 +675,6 @@ body.dragging .cursor-circle {
   scrollbar-width: none;
 }
 
-/* Modificadores de fondo por página */
 body.portfolio-page {
   background-color: #f6f6f6;
 }
@@ -725,7 +685,6 @@ body.portfolio-page .sidebar {
 body.about-page {
   background-color: #0a0a12;
 }
-/* About: sidebar siempre blanca, sin cambiar de color */
 body.about-page .sidebar {
   background-color: #ffffff !important;
   border-right: 1px solid #e5e5e5;
@@ -742,7 +701,6 @@ body.about-page .sidebar-middle .logo {
   color: #111 !important;
 }
 
-/* About: scroll vertical con la rueda del mouse */
 body.about-page .scroll-container {
   overflow-x: hidden;
   overflow-y: auto;
@@ -758,7 +716,6 @@ body.about-page .about-page-panel {
   display: block;
 }
 
-/* ---------------- PANEL 1: INICIO CONSTELACIÓN (DARK MODE) ---------------- */
 .dark-mode {
   background-color: #050505;
   color: #ffffff;
@@ -830,7 +787,6 @@ body.about-page .about-page-panel {
   }
 }
 
-/* ---------------- GALERÍA PORTAFOLIO (ESTILO BAD BUNNY) ---------------- */
 .portfolio-scroll {
   scroll-snap-type: x mandatory;
 }
@@ -840,11 +796,11 @@ body.about-page .about-page-panel {
   align-items: center;
   height: 100%;
   padding: 0 calc(50vw - 45px - 25vw);
-  gap: 15vw; /* Distancia masiva entre proyectos */
+  gap: 15vw;
 }
 
 .portfolio-item {
-  flex: 0 0 45vw; /* Ancho de la imagen principal en el centro */
+  flex: 0 0 45vw;
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
@@ -870,7 +826,7 @@ body.about-page .about-page-panel {
 .image-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Clave: recorta la imagen perfecto al contenedor gigante */
+  object-fit: cover;
   display: block;
 }
 
@@ -887,7 +843,6 @@ body.about-page .about-page-panel {
   color: #111;
 }
 
-/* ---------------- PANEL STACK / SOFTWARE (inspirado Magic 5) ---------------- */
 .about-panel {
   position: relative;
   background: linear-gradient(165deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e3a5f 75%, #0c4a6e 100%);
@@ -896,7 +851,6 @@ body.about-page .about-page-panel {
   overflow: hidden;
 }
 
-/* Capa de fondo: suave y agradable, sin gris */
 .about-panel-bg {
   position: absolute;
   inset: 0;
@@ -976,8 +930,6 @@ body.about-page .about-page-panel {
   max-width: 920px;
   margin: 0 auto;
 }
-
-/* Título: más grande y animación de entrada impactante */
 .about-stack-headline {
   font-size: 2.25rem;
   letter-spacing: 0.2em;
@@ -1002,7 +954,6 @@ body.about-page .about-page-panel {
   }
 }
 
-/* Subtítulo: más grande y entrada escalonada */
 .about-stack-sub {
   font-size: 1.25rem;
   color: rgba(255, 255, 255, 0.88);
@@ -1061,7 +1012,6 @@ body.about-page .about-page-panel {
   }
 }
 
-/* Hover: contorno RGB por software */
 .about-stack-card--unity:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: #ffffff;
@@ -1110,7 +1060,6 @@ body.about-page .about-page-panel {
   transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-/* Unity logo negro → invertir en fondo oscuro */
 .about-stack-logo-unity img {
   filter: invert(1) brightness(1.1);
 }
@@ -1172,7 +1121,6 @@ body.about-page .about-page-panel {
   background: linear-gradient(90deg, #ff7a9b, #ffbf5f);
   color: #12001b;
 }
-/* Responsive para los nuevos paneles */
 @media (max-width: 900px) {
   .portfolio-track {
     gap: 10vw;
@@ -1190,23 +1138,20 @@ body.about-page .about-page-panel {
   }
 }
 
-/* ===== OVERLAY DE PROYECTOS (PÁGINA COMPLETA) ===== */
-
 .projects-overlay {
   position: fixed;
   inset: 0;
-  z-index: 999; /* por encima de todo */
+  z-index: 999;
   background: linear-gradient(90deg, #0010ff 0%, #5b7dff 50%, #ffffff 100%);
   display: flex;
   align-items: stretch;
   justify-content: center;
-  transform: translateX(100%); /* fuera de pantalla a la derecha */
+  transform: translateX(100%);
   opacity: 0;
   pointer-events: auto;
   transition: transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.5s ease-out;
 }
 
-/* Cuando se activa desde JS */
 .projects-overlay.projects-overlay--visible {
   transform: translateX(0);
   opacity: 1;
@@ -1221,7 +1166,6 @@ body.about-page .about-page-panel {
   color: #ffffff;
 }
 
-/* Botón BACK */
 .projects-overlay-close {
   position: absolute;
   top: 24px;
@@ -1241,7 +1185,6 @@ body.about-page .about-page-panel {
   background: rgba(0, 0, 0, 0.85);
 }
 
-/* Cabecera del overlay */
 .projects-overlay-header h2 {
   font-family: 'Georgia', 'Times New Roman', serif;
   font-size: 32px;
@@ -1255,8 +1198,6 @@ body.about-page .about-page-panel {
   max-width: 420px;
   opacity: 0.9;
 }
-
-/* ===== MENÚ HAMBURGUESA EN PÁGINA DE PROYECTOS ===== */
 
 .projects-hamburger {
   position: absolute;
@@ -1275,7 +1216,6 @@ body.about-page .about-page-panel {
   backdrop-filter: blur(12px);
 }
 
-/* Cada línea-opción */
 .hamburger-item {
   display: flex;
   align-items: center;
@@ -1292,7 +1232,6 @@ body.about-page .about-page-panel {
   color: #ffd27f;
 }
 
-/* Barra inicial (línea larga) */
 .hamburger-bar {
   display: block;
   height: 2px;
@@ -1302,7 +1241,6 @@ body.about-page .about-page-panel {
   transition: width 0.35s ease, background-color 0.35s ease, transform 0.35s ease;
 }
 
-/* Texto oculto por defecto */
 .hamburger-label {
   max-width: 0;
   opacity: 0;
@@ -1312,20 +1250,17 @@ body.about-page .about-page-panel {
   transition: max-width 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
 }
 
-/* Animación general al hacer hover sobre TODO el menú */
 .projects-hamburger:hover .hamburger-bar {
-  width: 10px; /* se achica → se vuelve guion */
-  transform: translateX(0); /* pegado al texto */
+  width: 10px;
+  transform: translateX(0);
 }
 
-/* Aparece el texto cuando el menú está en hover */
 .projects-hamburger:hover .hamburger-label {
   max-width: 200px;
   opacity: 1;
   transform: translateX(4px);
 }
 
-/* Pequeño efecto de escalonado entre líneas */
 .projects-hamburger .hamburger-item:nth-child(1) .hamburger-bar,
 .projects-hamburger .hamburger-item:nth-child(1) .hamburger-label {
   transition-delay: 0s;
@@ -1343,8 +1278,6 @@ body.about-page .about-page-panel {
   transition-delay: 0.15s;
 }
 
-/* ===== CARRUSEL EN ONDA ===== */
-
 .wave-carousel {
   margin-top: 40px;
   flex: 1;
@@ -1359,7 +1292,6 @@ body.about-page .about-page-panel {
   animation: wave-carousel-move 38s linear infinite;
 }
 
-/* Tarjeta individual */
 .wave-card {
   flex: 0 0 320px;
   transform: translateY(var(--wave-offset, 0px));
@@ -1442,24 +1374,20 @@ body.about-page .about-page-panel {
   text-transform: uppercase;
 }
 
-/* Hover sobre una tarjeta */
 .wave-card:hover {
   transform: translateY(calc(var(--wave-offset, 0px) - 12px)) scale(1.04);
   box-shadow: 0 26px 60px rgba(0, 0, 0, 0.7);
 }
 
-/* Movimiento continuo del carrusel */
 @keyframes wave-carousel-move {
   0% {
     transform: translateX(0);
   }
   100% {
-    /* ajusta -50% según cuánto hayas duplicado proyectos */
     transform: translateX(-50%);
   }
 }
 
-/* Responsive simple */
 @media (max-width: 900px) {
   .projects-overlay-inner {
     padding: 28px 24px;
@@ -1469,8 +1397,6 @@ body.about-page .about-page-panel {
     flex: 0 0 70vw;
   }
 }
-
-/* ===== MODAL DE PROYECTO (mini ventana) ===== */
 
 .project-modal-backdrop {
   position: fixed;
@@ -1765,8 +1691,6 @@ body.about-page .about-page-panel {
   box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
 }
 
-/* ===== ICONOS SOCIALES LATERALES ===== */
-
 .social-link {
   width: 26px;
   height: 26px;
@@ -1788,8 +1712,6 @@ body.about-page .about-page-panel {
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
 }
-
-/* Colores por red */
 
 .social-ig {
   border-color: #ff7a9b;
@@ -1820,7 +1742,6 @@ body.about-page .about-page-panel {
   color: #fff;
   border-color: #111;
 }
-/* ===== ABOUT PAGE EXTENDIDA ===== */
 
 .about-page-panel {
   padding: 56px 72px 80px;
@@ -1828,7 +1749,6 @@ body.about-page .about-page-panel {
   color: #f5f3ff;
 }
 
-/* Bloques con borde/glow RGB y espacio para que el texto no quede pegado */
 .about-block--rgb {
   border: 1px solid transparent;
   border-radius: 20px;
@@ -1850,8 +1770,6 @@ body.about-page .about-page-panel {
   mask-composite: exclude;
   pointer-events: none;
 }
-
-/* HERO */
 
 .about-hero {
   display: grid;
@@ -1902,7 +1820,6 @@ body.about-page .about-page-panel {
 .about-hero-text p:last-child {
   margin-bottom: 0;
 }
-/* Animación de aparición del texto (reveal) */
 .about-hero-text .about-typing-line {
   display: inline;
   border-right: 2px solid rgba(153, 167, 255, 0.8);
@@ -1994,7 +1911,6 @@ body.about-page .about-page-panel {
   filter: brightness(1.05);
 }
 
-/* Carrera */
 .about-section-title,
 .about-section h2 {
   font-family: 'Georgia', serif;
@@ -2030,7 +1946,6 @@ body.about-page .about-page-panel {
   color: #a5b0ff;
 }
 
-/* Imagen de la sección Carrera (lado derecho, dentro de márgenes) */
 .about-career-image {
   flex-shrink: 0;
   width: 180px;
@@ -2039,15 +1954,18 @@ body.about-page .about-page-panel {
   overflow: hidden;
   border: 2px solid rgba(153, 167, 255, 0.3);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  display: flex; /* Centra la imagen si sobra espacio */
+  align-items: center;
+  justify-content: center;
+  padding: 15px; /* Crea el espacio entre el borde y el logo */
+  box-sizing: border-box; /* Asegura que el padding no agrande el cuadro */
 }
 .about-career-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
-
-/* SECCIONES GENERALES */
 
 .about-section {
   margin-top: 40px;
@@ -2138,8 +2056,6 @@ body.about-page .about-page-panel {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
-/* SKILLS */
-
 .skills-layout {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -2184,8 +2100,6 @@ body.about-page .about-page-panel {
   color: #a3acff;
   font-style: normal;
 }
-
-/* BANNER PARA CONTRATOS */
 
 .about-hire-banner {
   margin-top: 26px;
@@ -2233,8 +2147,6 @@ body.about-page .about-page-panel {
   background: #ffefcf;
 }
 
-/* Responsive about */
-
 @media (max-width: 900px) {
   .about-hero {
     grid-template-columns: 1fr;
@@ -2267,7 +2179,6 @@ body.about-page .about-page-panel {
     height: 120px;
   }
 }
-/* ===== PORTAFOLIO CARRUSEL (PÁGINA COMPLETA) ===== */
 
 .portfolio-carrusel-panel {
   padding: 56px 72px;
@@ -2304,11 +2215,9 @@ body.about-page .about-page-panel {
   color: #dde5ff;
 }
 
-/* Reaprovechamos .wave-carousel y .wave-card ya definidos */
 .portfolio-carrusel-panel .wave-carousel {
   margin-top: 24px;
 }
-/* ===== SECCIÓN DE MÚSICA EN ABOUT (ÁLBUMES + PLAYER) ===== */
 
 .about-music-section {
   margin-top: 40px;
@@ -2434,8 +2343,6 @@ body.about-page .about-page-panel {
   margin-top: 2px;
 }
 
-/* --- REPRODUCTOR PERSONALIZADO --- */
-
 .music-player {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto auto;
@@ -2498,8 +2405,6 @@ body.about-page .about-page-panel {
   font-variant-numeric: tabular-nums;
 }
 
-/* Pequeña animación de “latido” cuando está sonando */
-
 @keyframes music-pulse {
   0% {
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.35);
@@ -2516,7 +2421,6 @@ body.about-page .about-page-panel {
   animation: music-pulse 1.3s ease-in-out infinite;
 }
 
-/* Responsive música */
 @media (max-width: 600px) {
   .album-card {
     grid-template-columns: 70px minmax(0, 1fr);
@@ -2539,7 +2443,6 @@ body.about-page .about-page-panel {
   }
 }
 
-/* Mini tarjeta de música flotante */
 .floating-music-badge {
   position: fixed;
   right: 24px;
