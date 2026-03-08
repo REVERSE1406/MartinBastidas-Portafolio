@@ -49,14 +49,6 @@
 
       <main class="scroll-container">
         <section class="panel about-page-panel">
-          <!-- ========== GUÍA RÁPIDA: DÓNDE PONER TU CONTENIDO ==========
-            • Tu foto: sustituye la ruta en el <img> de .about-portrait-frame por:  img/mi-foto.jpg
-            • Portadas de álbumes: img/album-synthwave.jpg, img/album-indie.jpg, img/album-ost.jpg
-            • Archivos MP3: audio/synthwave-mix.mp3, audio/indie-mix.mp3, audio/ost-mix.mp3
-              (cada .music-player tiene data-audio-src="audio/..." para la pista que suena al hacer click)
-          ========== -->
-
-          <!-- HERO: Sobre mí (scroll hacia abajo para más) -->
           <header class="about-hero about-block about-block--rgb">
             <div class="about-hero-left">
               <h1>SOBRE MÍ</h1>
@@ -92,7 +84,6 @@
 
             <figure class="about-hero-right">
               <div class="about-portrait-frame about-portrait-frame--rgb">
-                <!-- PON AQUÍ TU FOTO: guarda tu imagen como img/mi-foto.jpg y usa src="img/mi-foto.jpg" -->
                 <img src="img/mi-foto.jpg" alt="Martin Bastidas" />
               </div>
 
@@ -100,7 +91,6 @@
             </figure>
           </header>
 
-          <!-- CARRERA QUE ESTUDIO (texto izquierda, dragón derecha) -->
           <section class="about-section about-block about-block--rgb">
             <h2 class="about-section-title">Carrera que estudio</h2>
             <div class="about-career-inner">
@@ -113,13 +103,11 @@
                 </p>
               </div>
               <figure class="about-career-image">
-                <!-- Pon aquí tu imagen: guarda como _imagenes/carrera-imagen.jpg -->
                 <img src="_imagenes/carrera-imagen.jpg" alt="Carrera" />
               </figure>
             </div>
           </section>
 
-          <!-- MÚSICA QUE ME ACOMPAÑA: álbumes + reproductor (click para reproducir) -->
           <section class="about-section about-music-section about-block about-block--rgb">
             <h2 class="about-section-title">Música que me acompaña</h2>
             <p class="about-section-intro">
@@ -205,44 +193,38 @@
             </div>
           </section>
 
-          <!-- JUEGOS QUE ME INSPIRAN -->
-          <section class="about-section about-block about-block--rgb">
-            <h2 class="about-section-title">Juegos que me inspiran</h2>
-            <p class="about-section-intro">
-              Los videojuegos son un manual vivo de diseño: interfaces, feedback visual, ritmo, narrativa y UX.
-            </p>
+          <h2 class="about-section-title">Lo que juego y lo que me enseña</h2>
+        <p class="about-section-intro">
+    No solo juego por diversión; veo cada partida como un análisis de interfaces, ritmo y UX en tiempo real. Estos son mis juegos favoritos:
+  </p>
 
-            <div class="about-grid about-games-grid">
-              <article class="about-card about-card--rgb about-card--glow-1">
-                <h3>Juegos de mundo abierto</h3>
-                <p>
-                  Me inspiran para diseñar espacios navegables, mapas entendibles y sistemas de información que no
-                  saturen al jugador.
-                </p>
-                <p class="about-card-tags">Zelda BOTW · Red Dead Redemption 2</p>
-              </article>
+  <div class="about-grid about-games-grid">
+    <article class="about-card about-card--rgb about-card--glow-1">
+      <h3>Estrategia y Precisión</h3>
+      <p>
+        Me fascina cómo los shooters en primera persona con interfaces atractivas logran ser funcionales bajo presión. Analizo cómo la jerarquía visual mejora la toma de decisiones en segundos.
+      </p>
+      <p class="about-card-tags">Rainbow Six Siege · The Legend of Zelda: Breath of the Wild</p>
+    </article>
 
-              <article class="about-card about-card--rgb about-card--glow-2">
-                <h3>Indie de autor</h3>
-                <p>
-                  Proyectos pequeños pero muy cuidados en arte y narrativa. Me recuerdan que una buena idea visual vale
-                  más que un presupuesto gigante.
-                </p>
-                <p class="about-card-tags">Inside · Hollow Knight · Gris</p>
-              </article>
+    <article class="about-card about-card--rgb about-card--glow-2">
+      <h3>Deportes y Creatividad</h3>
+      <p>
+        Desde menús deportivos impecables hasta mundos que cambian cada temporada. Me inspiran para crear experiencias dinámicas que se sienten vivas.
+      </p>
+      <p class="about-card-tags">FIFA 26 · Fortnite · Red Dead Redemption 2</p>
+    </article>
 
-              <article class="about-card about-card--rgb about-card--glow-3">
-                <h3>Experiencias multijugador</h3>
-                <p>
-                  Me sirven para observar cómo conviven UX, rendimiento y claridad visual en interfaces que se usan bajo
-                  presión.
-                </p>
-                <p class="about-card-tags">Valorant · Apex Legends · Rocket League</p>
-              </article>
-            </div>
+    <article class="about-card about-card--rgb about-card--glow-3">
+      <h3>Creación y Aventura</h3>
+      <p>
+        Observo cómo el diseño guía al usuario sin necesidad de tutoriales, usando colores, sonidos y formas para comunicar rendimiento y objetivos de forma clara.
+      </p>
+      <p class="about-card-tags">Valorant · Rocket League · Grand Theft Auto V</p>
+    </article>
+  </div>
           </section>
 
-          <!-- LO QUE PUEDO HACER -->
           <section class="about-section about-block">
             <h2 class="about-section-title">Lo que puedo hacer por tu proyecto</h2>
             <p class="about-section-intro">
@@ -288,7 +270,7 @@
       </main>
     </div>
 
-    <!-- Mini tarjeta de música flotante (se muestra cuando suena una canción) -->
+    <!-- Mini tarjeta de música -->
     <div class="floating-music-badge" id="floating-music-badge" aria-live="polite">
       <button class="floating-music-toggle" type="button" aria-label="Reproducir / Pausar música">▶</button>
       <div class="floating-music-info">
