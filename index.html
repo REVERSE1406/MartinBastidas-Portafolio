@@ -52,7 +52,6 @@
 
       <main class="scroll-container">
         <div class="scroll-track">
-          <!-- SECCIÓN 1: INTRO + CONSTELACIÓN -->
           <section class="panel panel-intro dark-mode" id="home-panel">
             <canvas id="constellation-canvas"></canvas>
 
@@ -91,10 +90,8 @@
             </div>
           </section>
 
-          <!-- SECCIÓN 2: PROYECTOS (DOS COLUMNAS EN LOOP) -->
           <section class="panel panel-projects" id="projects-panel">
             <div class="projects-layout">
-              <!-- Columna izquierda: título + texto -->
               <div class="projects-info">
                 <h2>PROYECTOS PRINCIPALES</h2>
 
@@ -102,7 +99,6 @@
                   Una colección de piezas donde mezclo diseño digital, narrativa visual y experiencias interactivas.
                 </p>
 
-                <!-- Bloque que se escribe con animación -->
                 <div
                   class="projects-typing"
                   id="projects-typing"
@@ -139,9 +135,9 @@
                 <a href="portafolio.html" class="projects-open-overlay">Ver galería completa →</a>
               </div>
 
-              <!-- Columna derecha: dos columnas de proyectos en loop -->
+              <!-- Columna derecha-->
               <div class="projects-columns">
-                <!-- Columna que se mueve hacia arriba -->
+                <!-- Columna hacia arriba -->
                 <div class="projects-column projects-column-up">
                   <div class="projects-column-inner">
                     <article class="project-tile" data-project-id="mano-negra">
@@ -168,7 +164,7 @@
                       <div class="project-tile-content"><h3>RETRATO DIGITAL</h3></div>
                     </article>
 
-                    <!-- Duplicados para el loop -->
+                    <!-- loop -->
                     <article class="project-tile" data-project-id="mano-negra">
                       <div class="project-tile-image-wrap">
                         <img src="_imagenes/manonegra.jpg" alt="Proyecto 1" />
@@ -187,7 +183,7 @@
                   </div>
                 </div>
 
-                <!-- Columna que se mueve hacia abajo -->
+                <!-- Columna abajo -->
                 <div class="projects-column projects-column-down">
                   <div class="projects-column-inner">
                     <article class="project-tile" data-project-id="proyecto-ilustrado">
@@ -236,7 +232,6 @@
             </div>
           </section>
 
-          <!-- SECCIÓN 3: STACK / SOFTWARE (inspirado en Magic 5) -->
           <section class="panel about-panel" id="about-panel">
             <div class="about-panel-bg" aria-hidden="true">
               <div class="about-bg-gradient"></div>
@@ -284,7 +279,6 @@
       </main>
     </div>
 
-    <!-- CAPA FONDO CON NAVES -->
     <div class="ships-layer">
       <div class="ship"></div>
       <div class="ship"></div>
@@ -299,7 +293,7 @@
     <script src="scripts.js"></script>
     <script src="script.js"></script>
 
-    <!-- OVERLAY PÁGINA COMPLETA DE PROYECTOS -->
+    <!-- PÁGINA ROYECTOS -->
     <div id="projects-overlay" class="projects-overlay">
       <nav class="projects-hamburger">
         <a href="index.html" class="hamburger-item">
@@ -331,7 +325,7 @@
           <p>Selección completa de proyectos en recorrido continuo.</p>
         </header>
 
-        <!-- Carrusel en forma de onda -->
+        <!-- Carrusel-->
         <div class="wave-carousel">
           <div class="wave-track">
             <article class="wave-card" data-project-id="mano-negra" style="--wave-offset: 30px">
@@ -366,7 +360,6 @@
               </div>
             </article>
 
-            <!-- duplicados para que el loop sea suave -->
             <article class="wave-card" data-project-id="mano-negra" style="--wave-offset: 30px">
               <div class="wave-card-inner">
                 <img src="_imagenes/manonegra.jpg" alt="Proyecto 1" />
@@ -379,7 +372,7 @@
       </div>
     </div>
 
-    <!-- MINI VENTANA PARA PROYECTOS (más info: proceso + herramientas) -->
+    <!-- MINI VENTANA-->
     <div id="project-modal" class="project-modal-backdrop">
       <div class="project-modal">
         <div class="project-modal-header">
@@ -414,7 +407,7 @@
       </div>
     </div>
 
-    <!-- Vista de imagen a tamaño completo dentro del modal de proyecto -->
+    <!-- Tamaño completo de la imagen-->
     <div id="project-image-full" class="project-image-full">
       <div class="project-image-full-inner">
         <button id="project-image-full-close" type="button" class="project-image-full-close" aria-label="Cerrar imagen">
@@ -424,7 +417,6 @@
       </div>
     </div>
 
-    <!-- Mini tarjeta de música flotante (si hay música global sonando) -->
     <div class="floating-music-badge" id="floating-music-badge" aria-live="polite">
       <button class="floating-music-toggle" type="button" aria-label="Reproducir / Pausar música global">▶</button>
       <div class="floating-music-info">

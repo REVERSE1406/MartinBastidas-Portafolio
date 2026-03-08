@@ -10,14 +10,13 @@ html,
 body {
   width: 100%;
   height: 100%;
-  overflow-x: auto; /* para permitir scroll horizontal si el layout lo requiere */
+  overflow-x: auto;
   overflow-y: hidden;
   background: #000;
   color: #fff;
   font-family: 'Georgia', 'Times New Roman', serif;
 }
 
-/* Canvas detrás de todo */
 #constellation {
   position: fixed;
   inset: 0;
@@ -25,10 +24,9 @@ body {
   background: radial-gradient(circle at 20% 0%, #02101f 0, #000 55%, #000 100%);
 }
 
-/* Sección principal tipo portada */
 .hero {
   min-height: 100vh;
-  width: 200vw; /* ancho mayor para sugerir scroll horizontal */
+  width: 200vw;
   display: flex;
   align-items: center;
   padding-left: 5vw;
@@ -40,14 +38,12 @@ body {
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0) 100%);
 }
 
-/* Título grande */
 .hero-text h1 {
   font-size: clamp(3.8rem, 5vw, 5rem);
   letter-spacing: 0.08em;
   margin-bottom: 0.5rem;
 }
 
-/* Subtítulo más pequeño */
 .hero-text h2 {
   font-size: 1.1rem;
   letter-spacing: 0.2em;
@@ -55,14 +51,12 @@ body {
   margin-bottom: 2.5rem;
 }
 
-/* Párrafo con font-size más pequeño que el título */
 .hero-text p {
   font-size: 1.05rem;
   line-height: 1.7;
   max-width: 40rem;
 }
 
-/* Flecha de scroll horizontal en la esquina inferior derecha */
 .scroll-hint {
   position: fixed;
   right: 2.5rem;

@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const scrollContainer = document.querySelector('.scroll-container');
 
-  // --- 1. CURSOR PERSONALIZADO (OPTIMIZADO) ---
   const cursor = document.querySelector('.cursor-circle');
   const interactiveElements = document.querySelectorAll(
     'a, button, .portfolio-item, .soft-icon, .neon-card, .project-tile, .about-stack-card'
@@ -37,16 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 2. SCROLL HORIZONTAL: DRAG + RUEDA (SUAVE) ---
+  // --- SCROLL HORIZONTAL ---
   if (scrollContainer) {
     let isDown = false;
     let startX;
     let scrollLeft;
 
-    // Drag horizontal con click
     scrollContainer.addEventListener('mousedown', (e) => {
-      // si se hizo clic dentro de un project-tile, no iniciar drag (para abrir el modal)
-      if (e.target.closest('.project-tile')) return;
+      if (e.target.closest('.project-tile') || e.target.closest('.wave-card')) return;
 
       isDown = true;
       document.body.classList.add('dragging');
@@ -72,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollContainer.scrollLeft = scrollLeft - walk;
     });
 
-    // Rueda del mouse → scroll horizontal (usa deltaY directamente); en About usamos scroll vertical nativo
     window.addEventListener(
       'wheel',
       (e) => {
@@ -90,10 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   }
 
-  // --- 3. REVELACIÓN EN CASCADA + DETECCIÓN DEL PANEL DE INICIO + TYPING EN PROYECTOS ---
   let constellationActive = true;
 
-  // variables para el typing en la sección de proyectos
   let projectsTypingStarted = false;
   const typingContainer = document.getElementById('projects-typing');
   const typingSpan = typingContainer ? typingContainer.querySelector('.projects-typing-text') : null;
@@ -104,17 +98,14 @@ document.addEventListener('DOMContentLoaded', () => {
       entries.forEach((entry) => {
         const el = entry.target;
 
-        // nodos genéricos ocultos que se revelan (si los usas)
         if (el.classList.contains('hidden-node') && entry.isIntersecting) {
           el.classList.add('visible-node');
         }
 
-        // activar/desactivar constelación según el panel de inicio
         if (el.id === 'home-panel') {
           constellationActive = entry.isIntersecting;
         }
 
-        // cuando el panel de proyectos entra en vista, arrancamos el typing una sola vez
         if (el.id === 'projects-panel' && entry.isIntersecting) {
           if (!projectsTypingStarted && typingContainer && typingSpan) {
             projectsTypingStarted = true;
@@ -123,7 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
 
-        // cuando el panel about/stack entra en vista, animar las tarjetas de software
         if (el.id === 'about-panel' && entry.isIntersecting) {
           const wrap = document.getElementById('about-stack-wrap');
           if (wrap && !wrap.classList.contains('about-stack--visible')) {
@@ -160,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
         index++;
         setTimeout(type, speed);
       } else {
-        // cuando termina, dejamos el cursor parpadeando
         if (typingCursor) typingCursor.classList.add('projects-typing-cursor--done');
       }
     }
@@ -168,7 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
     type();
   }
 
-  // --- 4. LA RED GALÁCTICA (Canvas Fijo con Atracción Magnética, OPTIMIZADA) ---
   const canvas = document.getElementById('constellation-canvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
@@ -176,10 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let particles = [];
     let mouse = { x: null, y: null };
 
-    // Rastreador del nodo activo para el efecto magnético
     let activeCard = null;
 
-    // Actualizar mouse
     window.addEventListener('mousemove', (e) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
@@ -189,7 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
       mouse.y = null;
     });
 
-    // Detectar hover en los proyectos para activar la "gravedad" del nodo
     document.querySelectorAll('.neon-card').forEach((card) => {
       card.addEventListener('mouseenter', () => (activeCard = card));
       card.addEventListener('mouseleave', () => {
@@ -319,7 +304,6 @@ document.addEventListener('DOMContentLoaded', () => {
     animate();
   }
 
-  // --- 5. MODAL DE PROYECTOS (mini ventana flotante) ---
   const projectModal = document.getElementById('project-modal');
   const projectModalImage = document.getElementById('project-modal-image');
   const projectModalTitle = document.getElementById('project-modal-title');
@@ -445,7 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.add('overlay-open');
     };
 
-    // Imagen a tamaño completo dentro del modal
+    // Tamaño completo de la imagen
     if (projectModalImageWrapper && projectImageFull && projectImageFullImg) {
       projectModalImageWrapper.addEventListener('click', () => {
         if (!projectModalImage || !projectModalImage.src) return;
@@ -536,7 +520,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// --- 6. REPRODUCTOR PERSONALIZADO EN ABOUT (MÚSICA) ---
+// --- REPRODUCTOR DE MÚSICA ---
 const musicPlayers = document.querySelectorAll('.music-player');
 const allAudios = [];
 let currentMusicAudio = null;
@@ -581,7 +565,6 @@ musicPlayers.forEach((player) => {
     if (currentTimeEl) currentTimeEl.textContent = formatTime(audio.currentTime);
   });
 
-  // Cambiar icono al pausar/terminar
   audio.addEventListener('pause', () => {
     if (playBtn) playBtn.textContent = '▶';
     player.classList.remove('music-playing');
@@ -623,7 +606,6 @@ musicPlayers.forEach((player) => {
     });
   }
 
-  // Click en la barra para saltar
   if (progress) {
     progress.addEventListener('click', (e) => {
       if (!audio.duration) return;
@@ -634,12 +616,10 @@ musicPlayers.forEach((player) => {
   }
 });
 
-// Control desde la mini tarjeta flotante
 if (floatingBadge && floatingBadgeToggle) {
   floatingBadgeToggle.addEventListener('click', () => {
     if (!currentMusicAudio) return;
     if (currentMusicAudio.paused) {
-      // pausar cualquier otro audio
       allAudios.forEach((other) => {
         if (other !== currentMusicAudio) other.pause();
       });
@@ -651,7 +631,6 @@ if (floatingBadge && floatingBadgeToggle) {
     }
   });
 }
-// --- Efecto de escritura en About (texto que se va escribiendo) ---
 (function aboutTyping() {
   const container = document.getElementById('about-hero-text');
   const output = document.getElementById('about-typing-output');

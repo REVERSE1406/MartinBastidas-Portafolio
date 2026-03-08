@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Animación de entrada (por si este script se usa en otra página)
   const page = document.querySelector('.page');
   if (page) {
     page.classList.add('show');
@@ -7,15 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const scrollContainer = document.querySelector('.scroll-container');
 
-  // --- OVERLAY DE PROYECTOS ACTIVADO POR "HOT ZONE" DERECHA (5s) ---
   const projectsOverlay = document.getElementById('projects-overlay');
   const closeOverlayBtn = document.querySelector('.projects-overlay-close');
 
   if (scrollContainer && projectsOverlay) {
     let overlayVisible = false;
 
-    const edgePx = 16; // zona activa: últimos 16px a la derecha
-    const holdMs = 5000; // sostener 5 segundos para abrir
+    const edgePx = 16;
+    const holdMs = 5000;
     let holdTimer = null;
 
     const openOverlay = () => {
@@ -32,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    // Solo activar el overlay cuando ya estamos en el panel de ABOUT (final del scroll)
     const isOnAboutPanel = () => {
       const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
       const current = scrollContainer.scrollLeft;
@@ -73,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // --- CARRUSEL EN ONDA (overlay proyectos) ---
+  // --- CARRUSEL EN ONDA ---
   const waveTrack = document.querySelector('.wave-track');
   const waveCards = document.querySelectorAll('.wave-card');
 
